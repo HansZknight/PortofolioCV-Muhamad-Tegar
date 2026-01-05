@@ -1,0 +1,306 @@
+/* ========================================
+   WHATSAPP FORM STYLES
+======================================== */
+
+/* WhatsApp Button */
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+  margin-top: 1.5rem;
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+  background: linear-gradient(135deg, #128c7e 0%, #25d366 100%);
+}
+
+.btn-whatsapp i {
+  font-size: 1.25rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Direct WhatsApp Section */
+.direct-whatsapp {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+/* Form Groups */
+.form-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.form-group.error .form-input {
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
+.form-group.success .form-input {
+  border-color: #10b981;
+  background: #f0fdf4;
+}
+
+.form-error-message {
+  display: none;
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  padding-left: 1rem;
+}
+
+.form-group.error .form-error-message {
+  display: block;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Character Counter */
+.char-counter {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  font-size: 0.75rem;
+  color: #6b7280;
+  background: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+/* Submit Button */
+.btn-submit {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+}
+
+.btn-submit:hover {
+  background: linear-gradient(135deg, #128c7e 0%, #25d366 100%);
+}
+
+.btn-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-submit.loading {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+/* Form Status */
+.form-status {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: none;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease;
+}
+
+.form-status.show {
+  display: flex;
+}
+
+.form-status.success {
+  background: #f0fdf4;
+  color: #065f46;
+  border: 1px solid #10b981;
+}
+
+.form-status.error {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #ef4444;
+}
+
+.form-status.loading {
+  background: #f0f9ff;
+  color: #075985;
+  border: 1px solid #0ea5e9;
+}
+
+/* WhatsApp Notice */
+.whatsapp-notice {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.1) 0%, rgba(18, 140, 126, 0.1) 100%);
+  border-radius: 0.5rem;
+  color: #128c7e;
+  font-size: 0.875rem;
+}
+
+.whatsapp-notice i {
+  font-size: 1.25rem;
+  color: #25d366;
+}
+
+/* Success Overlay */
+.form-success-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 100;
+  border-radius: var(--radius-2xl);
+}
+
+.form-success-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.success-content {
+  text-align: center;
+  animation: zoomIn 0.5s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.success-icon {
+  font-size: 4rem;
+  color: #10b981;
+  margin-bottom: 1rem;
+  animation: checkmark 0.5s ease;
+}
+
+@keyframes checkmark {
+  0% {
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(360deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+.whatsapp-loader {
+  margin-top: 1.5rem;
+  font-size: 2rem;
+  color: #25d366;
+}
+
+.whatsapp-loader i {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Form Shake Animation */
+.shake {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* Form States */
+.contact-form.sending {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.contact-form.success {
+  position: relative;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .btn-whatsapp {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .whatsapp-notice {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Dark Mode */
+[data-theme="dark"] .form-group.error .form-input {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+[data-theme="dark"] .form-group.success .form-input {
+  background: rgba(16, 185, 129, 0.1);
+}
+
+[data-theme="dark"] .char-counter {
+  background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .whatsapp-notice {
+  background: rgba(37, 211, 102, 0.05);
+}
+
+[data-theme="dark"] .form-success-overlay {
+  background: rgba(15, 23, 42, 0.98);
+}
